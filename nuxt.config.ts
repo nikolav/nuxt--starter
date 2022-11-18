@@ -8,9 +8,6 @@ export default defineNuxtConfig({
     // useRuntimeConfig()
   },
   modules: [
-    async (options, nuxt) => {
-      nuxt.hook("listen", (server) => console.log({ server }));
-    },
     "@vueuse/nuxt",
     "@nuxtjs/tailwindcss",
     [
