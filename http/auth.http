@@ -1,0 +1,25 @@
+
+### REGISTER
+
+POST http://localhost:3001/api/auth/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "user-33@nikolav.rs",
+  "password": "122333"
+}
+
+### LOGIN
+
+POST http://localhost:3001/api/auth/authenticate
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "admin@nikolav.rs",
+  "password": "122333"
+}
+
+###
+

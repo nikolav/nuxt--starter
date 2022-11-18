@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   return {
     status: "ok",
     received: {
-      message: body.message,
+      message: body?.message,
     },
   };
 });

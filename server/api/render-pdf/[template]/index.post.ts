@@ -32,6 +32,6 @@ export default defineEventHandler(async (event) => {
     },
   });
 
-  setDownloadHeaders(event.res, bufferPdf.length);
+  setDownloadHeaders(event.node.res, bufferPdf.length);
   return sendStream(event, read$);
 });

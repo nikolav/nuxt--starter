@@ -1,21 +1,23 @@
 <script setup lang="ts">
-
-const apiStatus = async () => {
-  const res = await $fetch("/api/status", {
+const userRegister = async () => {
+  const user = await $fetch("/api/auth/register", {
     method: "post", 
     body: {
-      message: "asd"
+      email: "user4@nikolav.rs",
+      password: "122333"
     }
   });
-
-  console.log({ res });
+  console.log({ user });
 }
 </script>
 
 <template>
-  <section class="**prose">
-    <v-btn @click="apiStatus" variant="outlined">api-status</v-btn>
-  </section>
+<h1>
+  auth
+</h1>
+<v-btn variant="outlined" @click="userRegister">
+  register
+</v-btn>
 </template>
 
 <style scoped>
