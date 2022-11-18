@@ -1,3 +1,5 @@
+import { REDIS_HOST, REDIS_PORT, REDIS_PASSWORD } from "./config/vars";
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 // https://www.geeksforgeeks.org/meta-tags-in-nuxt-js/
 export default defineNuxtConfig({
@@ -69,5 +71,19 @@ export default defineNuxtConfig({
     // config: {},
     // injectPosition: 0,
     viewer: false,
+  },
+  nitro: {
+    // https://nuxt.com/docs/guide/directory-structure/server#example-using-redis
+    storage: {
+      redis: {
+        driver: "redis",
+        port: REDIS_PORT,
+        host: REDIS_HOST,
+        username: "",
+        password: REDIS_PASSWORD,
+        db: 0,
+        tls: {},
+      },
+    },
   },
 });
