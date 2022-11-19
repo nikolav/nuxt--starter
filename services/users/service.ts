@@ -6,6 +6,11 @@ import { map } from "@/utils";
 
 const { hash } = bcryptjs;
 
+export const userFindById = async (id: string) => {
+  const client = (await prisma) as PrismaClient;
+  return await client.user.findUnique({ where: { id } });
+}
+
 export const userFindByEmail = async (email: string) => {
   const client = (await prisma) as PrismaClient;
   return client.user.findUnique({ where: { email } });
