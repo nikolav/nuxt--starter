@@ -1,5 +1,10 @@
 import bcryptjs from "bcryptjs";
-import { withTokens, userExists, userAdd, userFindByEmail } from "@/services";
+import {
+  withTokens,
+  userExists,
+  userAdd,
+  userFindByEmail,
+} from "@/services";
 
 const { compare } = bcryptjs;
 
@@ -17,7 +22,3 @@ export const logout = async () => {};
 
 export const sendMailPasswordReset = async () => {};
 export const passwordReset = async () => {};
-
-export const rolesByUser = async () => {};
-export const usersByRole = async () => {};
-export const matchesRoles = async () => {};

@@ -1,8 +1,34 @@
 import lodash from "lodash";
 
-const { assign, each, range, map, clamp, merge, forOwn, pick, omit, set, get } = lodash;
+const {
+  assign,
+  clamp,
+  each,
+  filter,
+  forOwn,
+  get,
+  map,
+  merge,
+  omit,
+  pick,
+  range,
+  set,
+} = lodash;
 
-export { assign, each, range, map, clamp, merge, forOwn, pick, omit, set, get };
+export {
+  assign,
+  clamp,
+  each,
+  filter,
+  forOwn,
+  get,
+  map,
+  merge,
+  omit,
+  pick,
+  range,
+  set,
+};
 export { default as inlineTemplate } from "./inline-template";
 export { default as hasOwn } from "./has-own";
 export * from "./set-download-headers";
