@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useDisplay } from "vuetify";
 // @@
 const userRegister = async () => {
   const user = await $fetch("/api/auth/register", {
@@ -21,12 +22,17 @@ const userLogin = async () => {
   });
   console.log({ auth });
 };
+// @@
+const { name: screenSizeName } = useDisplay();
 </script>
 
 <template>
   <h1>auth</h1>
-  <v-btn variant="outlined" @click="userRegister"> register </v-btn>
-  <v-btn variant="outlined" @click="userLogin"> login </v-btn>
+  <h4>{{ screenSizeName }}</h4>
+  <v-sheet class="p-1">
+    <v-btn variant="outlined" @click="userRegister"> register </v-btn>
+    <v-btn variant="outlined" @click="userLogin"> login </v-btn>
+  </v-sheet>
 </template>
 
 <style scoped>

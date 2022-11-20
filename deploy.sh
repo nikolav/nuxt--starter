@@ -5,3 +5,5 @@ sleep 1
 
 docker-compose up -d --build
 docker exec -it app npx prisma migrate deploy
+docker exec -it app yarn run db:upsert
+

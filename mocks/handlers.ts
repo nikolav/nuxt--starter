@@ -3,7 +3,7 @@ import { rest } from "msw"
 import { TEST_API_STATUS_URL } from "../config/vars";
 
 export const handlers = [
-  rest.get(TEST_API_STATUS_URL, (req, res, ctx) =>
+  rest.post(TEST_API_STATUS_URL, (req, res, ctx) =>
     res(ctx.status(200), ctx.json({ status: "ok" }))
   ),
 

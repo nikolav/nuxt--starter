@@ -33,7 +33,10 @@ describe("@boots", () => {
   });
   // @@
   it("fake api online", async () => {
-    const res = await axios(TEST_API_STATUS_URL);
+    const res = await axios({
+      method: "post", 
+      url: TEST_API_STATUS_URL
+    });
     expect(res.status).toBe(200);
     expect(res.data.status).toBe("ok");
   });
