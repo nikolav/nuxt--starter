@@ -6,9 +6,12 @@ import { authenticate } from "@/services/auth";
 
 export default defineEventHandler(async (event) => {
   try {
+    // validate input
     const {
       body: { email, password },
     } = await check(event, { body: authAuthenticate });
+
+    // db.find, format response
     return omit(await authenticate(email, password), ["user.passwordHash"]);
   } catch (error) {}
 

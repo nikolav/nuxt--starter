@@ -9,7 +9,7 @@ const { hash } = bcryptjs;
 export const userFindById = async (id: string) => {
   const client = (await prisma) as PrismaClient;
   return await client.user.findUnique({ where: { id } });
-}
+};
 
 export const userFindByEmail = async (email: string) => {
   const client = (await prisma) as PrismaClient;
@@ -52,6 +52,7 @@ export const rolesByUser = async ({ id }: User) => {
 };
 
 export const matchesRoles = async (user: User, ...roles: string[]) => {
+  if (0 === roles.length) return true;
   try {
     const userRoles = await rolesByUser(user);
     return roles.every((role) => userRoles.includes(role));
