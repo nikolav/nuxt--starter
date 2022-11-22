@@ -237,3 +237,4 @@ yarn-error.log
 yarn-error.log*
 vars.ts
 redis.conf
+tests/fixture

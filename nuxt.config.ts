@@ -31,10 +31,7 @@ export default defineNuxtConfig({
     ],
     async (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
-        config.plugins &&
-          config.plugins.push(
-            vuetify()
-          );
+        config.plugins && config.plugins.push(vuetify());
       });
     },
   ],
@@ -72,7 +69,7 @@ export default defineNuxtConfig({
   css: [
     "@/assets/style/reset.css",
     "@/assets/style/main.scss",
-    "vuetify/lib/styles/main.sass",
+    // "vuetify/lib/styles/main.sass",
     "@mdi/font/css/materialdesignicons.min.css",
   ],
   build: {
@@ -82,14 +79,6 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": false,
     },
-  },
-  tailwindcss: {
-    cssPath: "~/src/tailwind.css",
-    configPath: "~/config/tailwind.cjs",
-    // exposeConfig: false,
-    // config: {},
-    // injectPosition: 0,
-    viewer: false,
   },
   nitro: {
     // https://nuxt.com/docs/guide/directory-structure/server#example-using-redis
@@ -104,5 +93,13 @@ export default defineNuxtConfig({
         tls: {},
       },
     },
+  },
+  tailwindcss: {
+    cssPath: "~/src/tailwind.css",
+    configPath: "~/config/tailwind.cjs",
+    // exposeConfig: false,
+    // config: {},
+    // injectPosition: 0,
+    viewer: false,
   },
 });

@@ -1,12 +1,14 @@
 declare module "@nuxt/schema" {
   interface NuxtConfig {
     tailwindcss?: {
-      cssPath?: string;
-      configPath?: string;
-      exposeConfig?: boolean;
+      cssPath?: string | undefined;
+      configPath?: string | undefined;
+      exposeConfig?: boolean | undefined;
       config?: any;
-      injectPosition?: number;
-      viewer?: boolean;
+      injectPosition?: number | undefined;
+      viewer?: boolean | undefined;
     };
   }
 }
+
+export {}
