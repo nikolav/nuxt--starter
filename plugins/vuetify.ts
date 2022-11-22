@@ -1,12 +1,12 @@
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
-// import { md1 } from "vuetify/blueprints";
+import { md1 } from "vuetify/blueprints";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
 
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     ssr: true,
-    // blueprint: md1,
+    blueprint: md1,
 
     // display: {
     //   mobileBreakpoint: "sm",
@@ -29,11 +29,11 @@ export default defineNuxtPlugin((nuxtApp) => {
       //     colors: {},
       //   },
       // },
-      // variations: {
-      //   colors: ["primary", "secondary"],
-      //   lighten: 1,
-      //   darken: 2,
-      // },
+      variations: {
+        colors: ["primary", "secondary"],
+        lighten: 1,
+        darken: 1,
+      },
     },
 
     // @@ set component/alias props

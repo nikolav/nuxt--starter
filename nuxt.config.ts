@@ -15,9 +15,11 @@ export default defineNuxtConfig({
     async (options, nuxt) => {
       nuxt.hooks.hook("listen", (server) => {
         console.log({
-          server, nuxt, options
-        })
-      })
+          server,
+          nuxt,
+          options,
+        });
+      });
     },
     "@vueuse/nuxt",
     "@nuxtjs/tailwindcss",
@@ -29,7 +31,10 @@ export default defineNuxtConfig({
     ],
     async (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
-        config.plugins && config.plugins.push(vuetify());
+        config.plugins &&
+          config.plugins.push(
+            vuetify()
+          );
       });
     },
   ],

@@ -1,9 +1,9 @@
 // src/mocks/handlers.js
 import { rest } from "msw"
-import { TEST_API_STATUS_URL } from "../config/vars";
+import { FAKE_API_STATUS_URL } from "../config/vars";
 
 export const handlers = [
-  rest.post(TEST_API_STATUS_URL, (req, res, ctx) =>
+  rest.post(FAKE_API_STATUS_URL, (req, res, ctx) =>
     res(ctx.status(200), ctx.json({ status: "ok" }))
   ),
 
